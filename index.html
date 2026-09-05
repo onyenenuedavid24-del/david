@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Downloads | Anime Alley</title>
+
+    <link
+        rel="stylesheet"
+        href="css/download.css"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+
+<body>
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="main-header">
+
+    <!-- LOGO -->
+
+    <a
+        href="home.html"
+        class="logo"
+    >
+        Anime Alley
+    </a>
+
+
+    <!-- DESKTOP SEARCH -->
+
+    <div class="header-search">
+
+        <input
+            type="text"
+            placeholder="Search anime..."
+            aria-label="Search anime"
+        >
+
+    </div>
+
+
+    <!-- MOBILE SEARCH BUTTON -->
+
+    <button
+        class="mobile-search"
+        id="mobileSearch"
+        aria-label="Open search"
+        type="button"
+    >
+        🔍
+    </button>
+
+
+    <!-- MOBILE SEARCH BOX -->
+
+    <div
+        class="mobile-search-box"
+        id="mobileSearchBox"
+    >
+
+        <input
+            type="text"
+            id="mobileSearchInput"
+            placeholder="Search anime..."
+            autocomplete="off"
+        >
+
+    </div>
+
+
+    <!-- DESKTOP NAV -->
+
+    <nav class="header-nav">
+
+        <a href="home.html">
+            Home
+        </a>
+
+        <a href="#">
+            My List
+        </a>
+
+        <a
+            href="#"
+        >
+            Downloads
+        </a>
+
+    </nav>
+
+
+    <!-- THREE DOT MENU -->
+
+    <div class="menu-wrapper">
+
+        <button
+            class="menu-dots"
+            id="menuDots"
+            aria-label="More options"
+            aria-expanded="false"
+            type="button"
+        >
+            ⋮
+        </button>
+
+
+        <div
+            class="dots-menu"
+            id="dotsMenu"
+        >
+
+            <a href="#">
+                👤 Profile
+            </a>
+
+            <a href="#">
+                ⚙ Settings
+            </a>
+
+            <a href="#">
+                Notifications
+            </a>
+
+            <a href="download.html">
+                Help and About
+            </a>
+
+            <button
+                type="button"
+                id="logoutBtn"
+            >
+                ⇥ Log Out
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     ANIME INFORMATION
+===================================================== -->
+
+<section class="anime-info-strip">
+
+    <div class="anime-info-left">
+
+        <button
+            class="back-btn"
+            id="backBtn"
+            type="button"
+        >
+            ← Back
+        </button>
+
+
+        <div class="anime-details">
+
+            <img
+                src="images/cards/anime1.jpg"
+                alt="Anime thumbnail"
+                class="anime-thumb"
+            >
+
+
+            <div class="anime-text">
+
+                <h1>
+                    Demon Blade: Eclipse
+                </h1>
+
+                <span class="anime-status">
+                    Ongoing
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SUB / DUB -->
+
+    <div class="language-selector">
+
+        <button
+            class="language-btn active"
+            data-language="sub"
+            type="button"
+        >
+            SUB
+        </button>
+
+        <button
+            class="language-btn"
+            data-language="dub"
+            type="button"
+        >
+            DUB
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="download-page">
+
+
+    <!-- =================================================
+         EPISODES
+    ================================================== -->
+
+    <section class="episode-section">
+
+        <div class="section-heading">
+
+            <h2>
+                Episodes
+            </h2>
+
+            <p>
+                Select the episodes you want to download.
+            </p>
+
+        </div>
+
+
+        <!-- CONTROLS -->
+
+        <div class="episode-controls">
+
+
+            <!-- SELECT ALL -->
+
+            <label class="select-all">
+
+                <input
+                    type="checkbox"
+                    id="selectAll"
+                >
+
+                <span>
+                    Select All
+                </span>
+
+            </label>
+
+
+            <!-- RANGE -->
+
+            <div class="range-controls">
+
+                <span>
+                    Episodes
+                </span>
+
+                <input
+                    type="number"
+                    id="rangeStart"
+                    class="range-input"
+                    min="1"
+                    max="24"
+                    placeholder="From"
+                >
+
+                <span>
+                    to
+                </span>
+
+                <input
+                    type="number"
+                    id="rangeEnd"
+                    class="range-input"
+                    min="1"
+                    max="24"
+                    placeholder="To"
+                >
+
+                <button
+                    class="range-btn"
+                    id="applyRange"
+                    type="button"
+                >
+                    Apply
+                </button>
+
+            </div>
+
+
+            <!-- CLEAR -->
+
+            <button
+                class="clear-btn"
+                id="clearSelection"
+                type="button"
+            >
+                Clear
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             EPISODE LIST
+        ================================================== -->
+
+        <div
+            class="episode-list"
+            id="episodeList"
+        >
+
+
+            <div
+                class="episode-row"
+                data-episode-row
+            >
+
+                <input
+                    type="checkbox"
+                    class="episode-checkbox"
+                    data-episode="1"
+                    data-size="250"
+                >
+
+                <span class="episode-number">
+                    Episode 1
+                </span>
+
+                <span class="episode-title">
+                    The Beginning
+                </span>
+
+                <span class="episode-duration">
+                    24m
+                </span>
+
+            </div>
+
+
+            <div
+                class="episode-row"
+                data-episode-row
+            >
+
+                <input
+                    type="checkbox"
+                    class="episode-checkbox"
+                    data-episode="2"
+                    data-size="250"
+                >
+
+                <span class="episode-number">
+                    Episode 2
+                </span>
+
+                <span class="episode-title">
+                    The New Journey
+                </span>
+
+                <span class="episode-duration">
+                    24m
+                </span>
+
+            </div>
+
+
+            <div
+                class="episode-row"
+                data-episode-row
+            >
+
+                <input
+                    type="checkbox"
+                    class="episode-checkbox"
+                    data-episode="3"
+                    data-size="250"
+                >
+
+                <span class="episode-number">
+                    Episode 3
+                </span>
+
+                <span class="episode-title">
+                    Into the Darkness
+                </span>
+
+                <span class="episode-duration">
+                    24m
+                </span>
+
+            </div>
+
+
+            <div
+                class="episode-row"
+                data-episode-row
+            >
+
+                <input
+                    type="checkbox"
+                    class="episode-checkbox"
+                    data-episode="4"
+                    data-size="250"
+                >
+
+                <span class="episode-number">
+                    Episode 4
+                </span>
+
+                <span class="episode-title">
+                    The Hidden Power
+                </span>
+
+                <span class="episode-duration">
+                    24m
+                </span>
+
+            </div>
+
+
+            <div
+                class="episode-row"
+                data-episode-row
+            >
+
+                <input
+                    type="checkbox"
+                    class="episode-checkbox"
+                    data-episode="5"
+                    data-size="250"
+                >
+
+                <span class="episode-number">
+                    Episode 5
+                </span>
+
+                <span class="episode-title">
+                    The Battle Begins
+                </span>
+
+                <span class="episode-duration">
+                    24m
+                </span>
+
+            </div>
+
+
+            <div
+                class="episode-row"
+                data-episode-row
+            >
+
+                <input
+                    type="checkbox"
+                    class="episode-checkbox"
+                    data-episode="6"
+                    data-size="250"
+                >
+
+                <span class="episode-number">
+                    Episode 6
+                </span>
+
+                <span class="episode-title">
+                    The Enemy
+                </span>
+
+                <span class="episode-duration">
+                    24m
+                </span>
+
+            </div>
+
+
+            <div
+                class="episode-row"
+                data-episode-row
+            >
+
+                <input
+                    type="checkbox"
+                    class="episode-checkbox"
+                    data-episode="7"
+                    data-size="250"
+                >
+
+                <span class="episode-number">
+                    Episode 7
+                </span>
+
+                <span class="episode-title">
+                    Breaking the Seal
+                </span>
+
+                <span class="episode-duration">
+                    24m
+                </span>
+
+            </div>
+
+
+            <div
+                class="episode-row"
+                data-episode-row
+            >
+
+                <input
+                    type="checkbox"
+                    class="episode-checkbox"
+                    data-episode="8"
+                    data-size="250"
+                >
+
+                <span class="episode-number">
+                    Episode 8
+                </span>
+
+                <span class="episode-title">
+                    Final Stand
+                </span>
+
+                <span class="episode-duration">
+                    24m
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         DOWNLOAD PANEL
+    ================================================== -->
+
+    <aside
+        class="download-panel"
+        id="downloadPanel"
+    >
+
+        <div class="download-panel-header">
+
+            <div>
+
+                <span class="panel-label">
+                    DOWNLOADS
+                </span>
+
+                <h2>
+                    Download Episodes
+                </h2>
+
+            </div>
+
+
+            <div class="download-panel-actions">
+
+                <!-- MOBILE COLLAPSE -->
+
+                <button
+                    class="collapse-download"
+                    id="collapseDownload"
+                    type="button"
+                    aria-expanded="true"
+                    aria-label="Collapse download panel"
+                    title="Hide download options"
+                >
+                    <span class="collapse-icon">
+                        ⌄
+                    </span>
+
+                    <span class="collapse-text">
+                        Hide
+                    </span>
+                </button>
+
+
+                <!-- CLOSE -->
+
+                <button
+                    class="close-download"
+                    id="closeDownload"
+                    aria-label="Close download panel"
+                    type="button"
+                >
+                    ×
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- RESOLUTION -->
+
+        <div class="download-option">
+
+            <label for="resolution">
+                Choose Resolution
+            </label>
+
+            <select id="resolution">
+
+                <option value="0.5">
+                    360p
+                </option>
+
+                <option value="0.7">
+                    480p
+                </option>
+
+                <option
+                    value="1"
+                    selected
+                >
+                    720p
+                </option>
+
+                <option value="1.6">
+                    1080p
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- SUMMARY -->
+
+        <div class="download-summary">
+
+            <div>
+
+                <span>
+                    Episodes
+                </span>
+
+                <strong id="selectedCount">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Total size
+                </span>
+
+                <strong id="totalSize">
+                    0 MB
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="download-btn"
+            id="downloadBtn"
+            disabled
+            type="button"
+        >
+            Download Selected
+        </button>
+
+    </aside>
+
+
+
+    <!-- =================================================
+         MOBILE DOWNLOAD BAR
+    ================================================== -->
+
+    <div
+        class="mobile-download-bar"
+        id="mobileDownloadBar"
+    >
+
+        <div class="mobile-download-info">
+
+            <strong id="mobileSelectedCount">
+                0 episodes
+            </strong>
+
+            <span id="mobileTotalSize">
+                0 MB
+            </span>
+
+        </div>
+
+
+        <button
+            id="mobileDownloadBtn"
+            type="button"
+        >
+            Downloads
+        </button>
+
+    </div>
+
+
+
+    <!-- =================================================
+         MOBILE BOTTOM NAV
+    ================================================== -->
+
+    <nav class="mobile-bottom-nav">
+
+        <a href="home.html">
+
+            <span class="bottom-icon">
+                ⌂
+            </span>
+
+            <span>
+                Home
+            </span>
+
+        </a>
+
+
+        <a href="#">
+
+            <span class="bottom-icon">
+                ♡
+            </span>
+
+            <span>
+                My List
+            </span>
+
+        </a>
+
+
+        <a
+            href="download.html"
+            class="active"
+        >
+
+            <span class="bottom-icon">
+                ↓
+            </span>
+
+            <span>
+                Downloads
+            </span>
+
+        </a>
+
+    </nav>
+
+
+
+    <!-- =================================================
+         AUTO DOWNLOAD
+    ================================================== -->
+
+    <section class="auto-download-section">
+
+        <h2>
+            Automatic Downloads
+        </h2>
+
+
+        <div class="auto-option">
+
+            <div>
+
+                <strong>
+                    Auto-download new episodes
+                </strong>
+
+                <p>
+                    Automatically download new episodes when they are released.
+                </p>
+
+            </div>
+
+
+            <label class="switch">
+
+                <input
+                    type="checkbox"
+                    id="autoDownload"
+                >
+
+                <span class="slider"></span>
+
+            </label>
+
+        </div>
+
+
+        <div class="auto-option">
+
+            <div>
+
+                <strong>
+                    Episode notifications
+                </strong>
+
+                <p>
+                    Get notified whenever a new episode is released.
+                </p>
+
+            </div>
+
+
+            <label class="switch">
+
+                <input
+                    type="checkbox"
+                    id="episodeNotifications"
+                >
+
+                <span class="slider"></span>
+
+            </label>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         RATING
+    ================================================== -->
+
+    <section class="rating-section">
+
+        <h2>
+            Rate this Anime
+        </h2>
+
+
+        <div class="rating-stars">
+
+            <button type="button">
+                ★
+            </button>
+
+            <button type="button">
+                ★
+            </button>
+
+            <button type="button">
+                ★
+            </button>
+
+            <button type="button">
+                ★
+            </button>
+
+            <button type="button">
+                ★
+            </button>
+
+        </div>
+
+
+        <div class="comment-area">
+
+            <textarea
+                id="commentInput"
+                placeholder="Share your thoughts about this anime..."
+            ></textarea>
+
+
+            <button
+                id="commentBtn"
+                type="button"
+            >
+                Post Comment
+            </button>
+
+        </div>
+
+
+        <div
+            class="comments-list"
+            id="commentsList"
+        ></div>
+
+    </section>
+
+</main>
+
+
+
+<!-- =====================================================
+     AUTO DOWNLOAD ONBOARDING
+===================================================== -->
+
+<div
+    class="onboarding-overlay"
+    id="onboardingOverlay"
+>
+
+    <div
+        class="onboarding-card"
+        id="onboardingCard"
+    >
+
+        <button
+            class="onboarding-close"
+            id="onboardingClose"
+            type="button"
+            aria-label="Close"
+        >
+            ×
+        </button>
+
+
+        <div class="onboarding-icon">
+            ↓
+        </div>
+
+
+        <span class="onboarding-label">
+            ANIME ALLEY TIP
+        </span>
+
+
+        <h2>
+            Want new episodes automatically?
+        </h2>
+
+
+        <p>
+            You can turn on Auto-download to automatically download
+            new episodes when they are released.
+        </p>
+
+
+        <div class="onboarding-feature">
+
+            <span>
+                ✓
+            </span>
+
+            <div>
+
+                <strong>
+                    Automatic downloads
+                </strong>
+
+                <small>
+                    New episodes are downloaded for you.
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="onboarding-feature">
+
+            <span>
+                ✓
+            </span>
+
+            <div>
+
+                <strong>
+                    Release notifications
+                </strong>
+
+                <small>
+                    Get notified when a new episode arrives.
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="onboarding-actions">
+
+            <!-- THIS IS ABOVE THE BUTTONS -->
+
+            <label class="dont-show">
+
+                <input
+                    type="checkbox"
+                    id="dontShowAgain"
+                >
+
+                <span>
+                    Don't show this again
+                </span>
+
+            </label>
+
+
+            <div class="onboarding-choice-buttons">
+
+                <button
+                    class="onboarding-skip"
+                    id="onboardingSkip"
+                    type="button"
+                >
+                    Skip
+                </button>
+
+
+                <button
+                    class="onboarding-enable"
+                    id="onboardingEnable"
+                    type="button"
+                >
+                    Turn On Auto-download
+                </button>
+
+            </div>
+
+
+            <button
+                class="onboarding-ok"
+                id="onboardingOk"
+                type="button"
+                hidden
+            >
+                OK
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="main-footer">
+
+    <div>
+
+        <strong>
+            Anime Alley
+        </strong>
+
+        <p>
+            Your anime, your way.
+        </p>
+
+    </div>
+
+
+    <div class="footer-links">
+
+        <a href="#">
+            About
+        </a>
+
+        <a href="#">
+            Privacy
+        </a>
+
+        <a href="#">
+            Terms
+        </a>
+
+        <a href="#">
+            Support
+        </a>
+
+    </div>
+
+
+    <p class="copyright">
+        © 2026 Anime Alley
+    </p>
+
+</footer>
+
+
+
+<script src="js/download.js"></script>
+
+</body>
+
+</html>
